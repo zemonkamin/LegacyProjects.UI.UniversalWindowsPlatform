@@ -22,9 +22,10 @@
 
 ### Информация о настройке каждого из выше перечисленных элементов находится <a href="https://github.com/zemonkamin/LegacyProjects.UI.UniversalWindowsPlatform/tree/main/Docs/Russian">здесь</a>
 
+# Screenshots:
+<img src="Screenshots/1.jpg" width=40%><img src="Screenshots/2.jpg" width=40%><img src="Screenshots/3.jpg" width=40%>
 
-
-# Разработчики:
+# Developers:
 <table style="border-collapse: separate; border-spacing: 0 10px;">
 <tr>
     <td style="vertical-align: middle;">

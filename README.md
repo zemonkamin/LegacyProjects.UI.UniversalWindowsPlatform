@@ -9,7 +9,7 @@
 - navbar
 - banner
 
-### Information about setting up each of the above listed elements is <a href="https://github.com/zemonkamin/LegacyProjects.UI .UniversalWindowsPlatform/tree/main/Docs/English">here</a>
+### Information about setting up each of the above listed elements is <a href="https://github.com/zemonkamin/LegacyProjects.UI.UniversalWindowsPlatform/tree/main/Docs/English">here</a>
 
 # RU:
 ## Что это? Это библиотека, которая добавляется рядом с основным проектом UWP Visual Studio 2015/2017 (возможно даже 2019), она добавляет в xaml редактор новые элементы, которые удобно редактируются и имеют много тонких настроек.

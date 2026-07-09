@@ -1,5 +1,4 @@
 // GlassEffect.fx
-// Неполосатое градиентное стеклянное размытие для раскрытого профильного баннера.
 // Без синусоидального distortion: blur + smooth alpha-gradient + мягкое затемнение книзу.
 
 Texture2D input : register(t0);

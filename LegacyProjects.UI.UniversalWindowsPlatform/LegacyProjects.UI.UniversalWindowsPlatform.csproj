@@ -1,4 +1,4 @@
-<?xml version='1.0' encoding='utf-8'?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="14.0" DefaultTargets="Build">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -88,7 +88,6 @@
   </PropertyGroup>
   <ItemGroup>
     <None Include="project.json" />
-    <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Shaders\GlassEffect.fx">
@@ -96,22 +95,49 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controls\UniversalTabBar.cs" />
-    <Compile Include="Enums\UniversalTabBarHorizontalPlacement.cs" />
-    <Compile Include="Enums\UniversalTabBarIconType.cs" />
-    <Compile Include="Enums\UniversalTabBarPressEffectMode.cs" />
-    <Compile Include="Enums\UniversalTabBarTextPosition.cs" />
-    <Compile Include="Enums\UniversalTabBarVerticalPlacement.cs" />
-    <Compile Include="Events\UniversalTabBarItemClickEventArgs.cs" />
-    <Compile Include="Events\UniversalTabBarSelectionChangedEventArgs.cs" />
-    <Compile Include="Models\UniversalTabBarItem.cs" />
-    <Compile Include="Controls\UniversalBanner.cs" />
-    <Compile Include="Enums\UniversalBannerIndicatorPlacement.cs" />
-    <Compile Include="Enums\UniversalBannerScrollDirection.cs" />
-    <Compile Include="Events\UniversalBannerItemClickEventArgs.cs" />
-    <Compile Include="Models\UniversalBannerItem.cs" />
+    <!-- TabBar -->
+    <Compile Include="Controls\TabBar.cs" />
+    <Compile Include="Enums\TabBarHorizontalPlacement.cs" />
+    <Compile Include="Enums\TabBarIconType.cs" />
+    <Compile Include="Enums\TabBarPressEffectMode.cs" />
+    <Compile Include="Enums\TabBarTextPosition.cs" />
+    <Compile Include="Enums\TabBarVerticalPlacement.cs" />
+    <Compile Include="Events\TabBarItemClickEventArgs.cs" />
+    <Compile Include="Events\TabBarSelectionChangedEventArgs.cs" />
+    <Compile Include="Models\TabBarItem.cs" />
+    <!-- Banner -->
+    <Compile Include="Controls\Banner.cs" />
+    <Compile Include="Enums\BannerIndicatorPlacement.cs" />
+    <Compile Include="Enums\BannerScrollDirection.cs" />
+    <Compile Include="Events\BannerItemClickEventArgs.cs" />
+    <Compile Include="Models\BannerItem.cs" />
+    <!-- Sidebar -->
+    <Compile Include="Controls\Sidebar.cs" />
+    <Compile Include="Enums\SidebarIconType.cs" />
+    <Compile Include="Enums\SidebarItemSection.cs" />
+    <Compile Include="Events\SidebarItemClickEventArgs.cs" />
+    <Compile Include="Events\SidebarSelectionChangedEventArgs.cs" />
+    <Compile Include="Models\SidebarItem.cs" />
+    <!-- NavigationBar -->
+    <Compile Include="Controls\NavigationBar.cs" />
+    <Compile Include="Enums\NavigationBarIconType.cs" />
+    <Compile Include="Enums\NavigationBarItemSection.cs" />
+    <Compile Include="Events\NavigationBarItemClickEventArgs.cs" />
+    <Compile Include="Models\NavigationBarItem.cs" />
+    <!-- New controls (not in Windows SDK 14393; inspired by WinUI 2/3) -->
+    <Compile Include="Controls\CircularProgress.cs" />
+    <Compile Include="Controls\Expander.cs" />
+    <Compile Include="Enums\ExpandDirection.cs" />
+    <Compile Include="Controls\SettingsCard.cs" />
+    <Compile Include="Enums\SettingsCardActionPlacement.cs" />
+    <Compile Include="Controls\NumberBox.cs" />
+    <Compile Include="Enums\NumberBoxSpinButtonPlacement.cs" />
+    <Compile Include="Controls\PipsPager.cs" />
+    <Compile Include="Events\PipsPagerSelectedIndexChangedEventArgs.cs" />
+    <!-- Shared -->
+    <Compile Include="Helpers\ActionInvoker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  <Compile Include="Controls\UniversalSidebar.cs" /><Compile Include="Controls\UniversalNavigationBar.cs" /><Compile Include="Enums\UniversalSidebarIconType.cs" /><Compile Include="Enums\UniversalSidebarItemSection.cs" /><Compile Include="Enums\UniversalNavigationBarIconType.cs" /><Compile Include="Enums\UniversalNavigationBarItemSection.cs" /><Compile Include="Events\UniversalSidebarItemClickEventArgs.cs" /><Compile Include="Events\UniversalSidebarSelectionChangedEventArgs.cs" /><Compile Include="Events\UniversalNavigationBarItemClickEventArgs.cs" /><Compile Include="Helpers\UniversalActionInvoker.cs" /><Compile Include="Models\UniversalSidebarItem.cs" /><Compile Include="Models\UniversalNavigationBarItem.cs" /></ItemGroup>
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

@@ -9,12 +9,20 @@ xmlns:ui="using:LegacyProjects.UI.UniversalWindowsPlatform.Controls"
 xmlns:models="using:LegacyProjects.UI.UniversalWindowsPlatform.Models"
 ```
 
-Controls covered here:
+Navigation & layout controls:
 
-- `UniversalTabBar`
-- `UniversalSidebar`
-- `UniversalNavigationBar`
-- `UniversalBanner`
+- `TabBar`
+- `Sidebar`
+- `NavigationBar`
+- `Banner`
+
+New WinUI 2/3 style controls (missing from the Windows 10 SDK 14393):
+
+- `CircularProgress` — determinate/indeterminate ring progress with optional centered text.
+- `Expander` — a header with a collapsible content region.
+- `SettingsCard` — a settings row with icon, header, description and a trailing action element.
+- `NumberBox` — numeric input with spin buttons, range clamping and parsing.
+- `PipsPager` — a row of selectable page dots.
 
 All examples are written for UWP / Visual Studio 2015 / C# 6 style projects.
 
@@ -23,11 +31,11 @@ All examples are written for UWP / Visual Studio 2015 / C# 6 style projects.
 Most interactive elements support `ActionTargetType` on the control and `ClickAction` on the item.
 
 ```xml
-<ui:UniversalTabBar ActionTargetType="TestUILibrary.AppNavigationActions">
-    <ui:UniversalTabBar.Items>
-        <models:UniversalTabBarItem Text="Home" Glyph="&#xE80F;" ClickAction="OpenHome" />
-    </ui:UniversalTabBar.Items>
-</ui:UniversalTabBar>
+<ui:TabBar ActionTargetType="TestUILibrary.AppNavigationActions">
+    <ui:TabBar.Items>
+        <models:TabBarItem Text="Home" Glyph="&#xE80F;" ClickAction="OpenHome" />
+    </ui:TabBar.Items>
+</ui:TabBar>
 ```
 
 Example action class:

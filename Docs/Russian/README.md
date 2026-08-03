@@ -11,10 +11,15 @@ xmlns:models="using:LegacyProjects.UI.UniversalWindowsPlatform.Models"
 
 Элементы в документации:
 
-- `UniversalTabBar`
-- `UniversalSidebar`
-- `UniversalNavigationBar`
-- `UniversalBanner`
+- `TabBar`
+- `Sidebar`
+- `NavigationBar`
+- `Banner`
+- `CircularProgress`
+- `Expander`
+- `SettingsCard`
+- `NumberBox`
+- `PipsPager`
 
 Примеры рассчитаны на UWP / Visual Studio 2015 / C# 6.
 
@@ -23,11 +28,11 @@ xmlns:models="using:LegacyProjects.UI.UniversalWindowsPlatform.Models"
 Большинство кликабельных элементов поддерживает `ActionTargetType` у самого контрола и `ClickAction` у отдельного элемента.
 
 ```xml
-<ui:UniversalTabBar ActionTargetType="TestUILibrary.AppNavigationActions">
-    <ui:UniversalTabBar.Items>
-        <models:UniversalTabBarItem Text="Home" Glyph="&#xE80F;" ClickAction="OpenHome" />
-    </ui:UniversalTabBar.Items>
-</ui:UniversalTabBar>
+<ui:TabBar ActionTargetType="TestUILibrary.AppNavigationActions">
+    <ui:TabBar.Items>
+        <models:TabBarItem Text="Home" Glyph="&#xE80F;" ClickAction="OpenHome" />
+    </ui:TabBar.Items>
+</ui:TabBar>
 ```
 
 Пример класса действий:

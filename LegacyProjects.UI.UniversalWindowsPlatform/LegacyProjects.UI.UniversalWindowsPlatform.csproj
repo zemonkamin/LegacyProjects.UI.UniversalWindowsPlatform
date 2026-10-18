@@ -113,17 +113,28 @@
     <Compile Include="Models\BannerItem.cs" />
     <!-- Sidebar -->
     <Compile Include="Controls\Sidebar.cs" />
+    <Compile Include="Controls\UniversalSidebar.cs" />
     <Compile Include="Enums\SidebarIconType.cs" />
     <Compile Include="Enums\SidebarItemSection.cs" />
+    <Compile Include="Enums\UniversalSidebarIconType.cs" />
+    <Compile Include="Enums\UniversalSidebarItemSection.cs" />
     <Compile Include="Events\SidebarItemClickEventArgs.cs" />
     <Compile Include="Events\SidebarSelectionChangedEventArgs.cs" />
+    <Compile Include="Events\UniversalSidebarItemClickEventArgs.cs" />
+    <Compile Include="Events\UniversalSidebarSelectionChangedEventArgs.cs" />
     <Compile Include="Models\SidebarItem.cs" />
+    <Compile Include="Models\UniversalSidebarItem.cs" />
     <!-- NavigationBar -->
     <Compile Include="Controls\NavigationBar.cs" />
+    <Compile Include="Controls\UniversalNavigationBar.cs" />
     <Compile Include="Enums\NavigationBarIconType.cs" />
     <Compile Include="Enums\NavigationBarItemSection.cs" />
+    <Compile Include="Enums\UniversalNavigationBarIconType.cs" />
+    <Compile Include="Enums\UniversalNavigationBarItemSection.cs" />
     <Compile Include="Events\NavigationBarItemClickEventArgs.cs" />
+    <Compile Include="Events\UniversalNavigationBarItemClickEventArgs.cs" />
     <Compile Include="Models\NavigationBarItem.cs" />
+    <Compile Include="Models\UniversalNavigationBarItem.cs" />
     <!-- New controls (not in Windows SDK 14393; inspired by WinUI 2/3) -->
     <Compile Include="Controls\CircularProgress.cs" />
     <Compile Include="Controls\Expander.cs" />
@@ -135,7 +146,13 @@
     <Compile Include="Controls\PipsPager.cs" />
     <Compile Include="Events\PipsPagerSelectedIndexChangedEventArgs.cs" />
     <!-- Shared -->
+    <Compile Include="Controls\PhotoViewer.cs" />
+    <Compile Include="Models\PhotoViewerItem.cs" />
+    <Compile Include="Helpers\PhotoViewerPolicy.cs" />
+    <Compile Include="Helpers\SharedRequestPool.cs" />
+    <Compile Include="Helpers\ImageDownloadCache.cs" />
     <Compile Include="Helpers\ActionInvoker.cs" />
+    <Compile Include="Helpers\UniversalActionInvoker.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">

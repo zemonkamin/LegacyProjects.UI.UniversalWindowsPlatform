@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using LegacyProjects.UI.UniversalWindowsPlatform.Enums;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Media;
@@ -30,6 +30,12 @@ namespace LegacyProjects.UI.UniversalWindowsPlatform.Models
             typeof(string),
             typeof(SidebarItem),
             new PropertyMetadata(string.Empty, OnItemPropertyChanged));
+
+        public static readonly DependencyProperty IsImageIconRoundedProperty = DependencyProperty.Register(
+            "IsImageIconRounded",
+            typeof(bool),
+            typeof(SidebarItem),
+            new PropertyMetadata(false, OnItemPropertyChanged));
 
         public static readonly DependencyProperty IconTypeProperty = DependencyProperty.Register(
             "IconType",
@@ -115,6 +121,12 @@ namespace LegacyProjects.UI.UniversalWindowsPlatform.Models
         {
             get { return (string)GetValue(ImagePathProperty); }
             set { SetValue(ImagePathProperty, value); }
+        }
+
+        public bool IsImageIconRounded
+        {
+            get { return (bool)GetValue(IsImageIconRoundedProperty); }
+            set { SetValue(IsImageIconRoundedProperty, value); }
         }
 
         public SidebarIconType IconType

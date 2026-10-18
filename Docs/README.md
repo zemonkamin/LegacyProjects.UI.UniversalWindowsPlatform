@@ -9,6 +9,11 @@ Navigation & layout controls:
 - NavigationBar.md
 - Banner.md
 
+Photo viewing:
+
+- [PhotoViewer — English](English/PhotoViewer.md)
+- [PhotoViewer — Русский](Russian/PhotoViewer.md)
+
 New WinUI 2/3 style controls (not in the Windows 10 SDK 14393):
 
 - CircularProgress.md

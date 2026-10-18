@@ -16,6 +16,10 @@ Navigation & layout controls:
 - `NavigationBar`
 - `Banner`
 
+Photo viewing:
+
+- [`PhotoViewer`](PhotoViewer.md) — full-window remote image viewer with zoom, navigation, Save and Share.
+
 New WinUI 2/3 style controls (missing from the Windows 10 SDK 14393):
 
 - `CircularProgress` — determinate/indeterminate ring progress with optional centered text.

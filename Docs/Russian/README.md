@@ -15,6 +15,7 @@ xmlns:models="using:LegacyProjects.UI.UniversalWindowsPlatform.Models"
 - `Sidebar`
 - `NavigationBar`
 - `Banner`
+- [`PhotoViewer`](PhotoViewer.md) — полноэкранный просмотр сетевых фотографий с масштабированием, перелистыванием, сохранением и отправкой.
 - `CircularProgress`
 - `Expander`
 - `SettingsCard`

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Markup;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Media.Imaging;
+using Windows.UI.Xaml.Shapes;
 
 namespace LegacyProjects.UI.UniversalWindowsPlatform.Controls
 {
@@ -122,6 +123,12 @@ namespace LegacyProjects.UI.UniversalWindowsPlatform.Controls
             typeof(double),
             typeof(Sidebar),
             new PropertyMetadata(16.0, OnVisualPropertyChanged));
+
+        public static readonly DependencyProperty IconForegroundProperty = DependencyProperty.Register(
+            "IconForeground",
+            typeof(Brush),
+            typeof(Sidebar),
+            new PropertyMetadata(null, OnVisualPropertyChanged));
 
         public static readonly DependencyProperty LabelFontSizeProperty = DependencyProperty.Register(
             "LabelFontSize",
@@ -449,6 +456,12 @@ namespace LegacyProjects.UI.UniversalWindowsPlatform.Controls
         {
             get { return (double)GetValue(IconTextSpacingProperty); }
             set { SetValue(IconTextSpacingProperty, value); }
+        }
+
+        public Brush IconForeground
+        {
+            get { return (Brush)GetValue(IconForegroundProperty); }
+            set { SetValue(IconForegroundProperty, value); }
         }
 
         public double LabelFontSize
@@ -1021,7 +1034,8 @@ namespace LegacyProjects.UI.UniversalWindowsPlatform.Controls
             contentGrid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(Math.Max(0, CompactPaneWidth)) });
             contentGrid.ColumnDefinitions.Add(new ColumnDefinition() { Width = new GridLength(1, GridUnitType.Star) });
 
-            FrameworkElement icon = CreateIcon(item, foreground);
+            Brush iconForeground = IconForeground != null ? IconForeground : foreground;
+            FrameworkElement icon = CreateIcon(item, iconForeground);
             if (icon != null && ShowIcons)
             {
                 icon.HorizontalAlignment = HorizontalAlignment.Center;
@@ -1061,18 +1075,38 @@ namespace LegacyProjects.UI.UniversalWindowsPlatform.Controls
 
             if (item.IconType == SidebarIconType.Image && !string.IsNullOrWhiteSpace(item.ImagePath))
             {
-                Image image = new Image();
-                image.Width = Math.Max(0, IconSize);
-                image.Height = Math.Max(0, IconSize);
-                image.Stretch = Stretch.Uniform;
+                double iconSize = Math.Max(0, IconSize);
+                BitmapImage bitmap = null;
                 try
                 {
-                    image.Source = new BitmapImage(new Uri(item.ImagePath, UriKind.RelativeOrAbsolute));
+                    bitmap = new BitmapImage(new Uri(item.ImagePath, UriKind.RelativeOrAbsolute));
                 }
                 catch
                 {
                 }
 
+                if (item.IsImageIconRounded)
+                {
+                    // Rounded avatars look smaller than font glyphs at the same
+                    // nominal size, so give only circular image icons more weight.
+                    const double roundedIconSize = 25;
+
+                    Ellipse ellipse = new Ellipse();
+                    ellipse.Width = roundedIconSize;
+                    ellipse.Height = roundedIconSize;
+
+                    ImageBrush brush = new ImageBrush();
+                    brush.Stretch = Stretch.UniformToFill;
+                    brush.ImageSource = bitmap;
+                    ellipse.Fill = brush;
+                    return ellipse;
+                }
+
+                Image image = new Image();
+                image.Width = iconSize;
+                image.Height = iconSize;
+                image.Stretch = Stretch.Uniform;
+                image.Source = bitmap;
                 return image;
             }
 
